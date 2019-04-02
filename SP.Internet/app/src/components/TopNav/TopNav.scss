@@ -1,0 +1,29 @@
+/* To avoid double padding application due to the BT bootstrap CSS */
+
+.yamm .container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#navbar {
+    ul.nav {
+        float: left;
+    }
+}
+
+.bootstrap-iso-ar #navbar ul.nav {
+    float: right;
+}
+
+@media (min-width: 768px) {
+    #navbar {
+        ul.nav {
+            float: left !important;
+        }
+    }
+
+    .bootstrap-iso-ar #navbar ul.nav {
+        float: right !important;
+    }
+
+}

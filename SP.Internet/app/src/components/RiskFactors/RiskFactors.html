@@ -1,0 +1,57 @@
+<div id="RiskFactors">
+    <div class="sec-title text-center">
+
+        <h2 data-bind="html: Intranet.Main.getResource('RiskFactorsHeader')"></h2>
+        <div class="separator"><span class="fa fa-bullseye"></span></div>
+    </div>
+    <!-- Flickity HTML init -->
+
+    <div class="RiskFactors-nav">
+        <!-- ko foreach: items -->
+
+        <div class="RiskFactors-nav-row" data-bind="click: $parent.selectSlide">
+            <div class="RiskFactors-nav-cell">
+
+                <span class="nav-img">
+                    <img data-bind="attr : {'src': CarouselItemImage ? CarouselItemImage.Url : $component.siteLogoUrl }" alt="" />
+
+                </span><br />
+                <span class="nav-label">
+                    <a data-bind="text: Title, attr: {href: '#' }" href="#"></a>
+                </span>
+            </div>
+        </div>
+
+        <!-- /ko -->
+    </div>
+    <div class="RiskFactors-Content">
+
+        <div class="RiskFactors">
+            <!-- ko foreach: items -->
+
+            <div class="RiskFactors-cell">
+
+                <img data-bind="attr : {'data-flickity-lazyload': $component.siteLogoUrl }, css : {'no-image' : 'true' }" />
+
+
+                <div class="slide-panel">
+                    <div id="slide-title" class="col-md-12 box-heading">
+                        <span data-bind="text: Title">
+                        </span>
+                    </div>
+
+                    <div id="slide-read-more" class="col-md-12 content-box">
+                        <span data-bind="text: Document_x0020_Description">
+                        </span>
+                        <a data-bind="attr: {href: CarouselItemURL ? CarouselItemURL.Url : '#' }, text: CarouselItemURL ? $parent.readMoreLabel: ''"> </a>
+                        <i data-bind="css: {'hidden': !CarouselItemURL }" class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+
+</div>

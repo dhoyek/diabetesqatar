@@ -1,0 +1,213 @@
+@import '../../styles/css/variables';
+
+#Type1Symptoms {
+    font-family: $font-primary;
+    font-size: 13px;
+    height: 300px;
+
+    .sec-title {
+        h2 {
+            position: relative;
+            color: #222222;
+            font-size: 30px;
+            line-height: 1.2em;
+            font-weight: 800;
+
+
+            span {
+                color: #00b2fe !important;
+            }
+        }
+    }
+
+    .Type1Symptoms-nav {
+        float: left;
+        width: 34.33333333%;
+        height: 100%;
+        display: table;
+        table-layout: fixed;
+
+        .Type1Symptoms-nav-row {
+            width: 45%;
+            /*padding: 5px;*/
+            cursor: pointer;
+            display: block;
+            float: left;
+
+            .Type1Symptoms-nav-cell {
+                margin-bottom: 1.5rem !important;
+                margin-right: 1.5rem !important;
+                display: block;
+                position: relative; // Needed for arrow
+                vertical-align: middle;
+                text-align: center;
+                -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.1);
+                box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+                color: #222222;
+                height: 110px;
+                font-weight: 600;
+
+                img {
+                    max-width: 42px;
+                    padding-top: 16px;
+                }
+
+                a {
+                    color: #222222;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    font-size: 15px;
+                }
+
+                a:hover, a:focus {
+                    text-decoration: none;
+                    color: #00aff5
+                }
+            }
+        }
+
+        .Type1Symptoms-nav-row.is-nav-selected {
+            .Type1Symptoms-nav-cell {
+                /*background-color: #00aff5;*/
+                -webkit-box-shadow: 0 0 8px rgba(0, 178, 254, 0.4);
+                box-shadow: 0px 0px 8px rgba(0, 178, 254, 0.4);
+
+                a {
+                    color: #00aff5;
+                }
+
+                a:hover, a:focus {
+                    color: #00aff5;
+                }
+            }
+        }
+    }
+
+    div.Type1Symptoms-nav > div.Type1Symptoms-nav-row ~ div.Type1Symptoms-nav-row {
+
+        .Type1Symptoms-nav-cell {
+            /*border-top: 1px solid #F2EFEF;*/
+        }
+    }
+
+    .Type1Symptoms-Content {
+        margin-left: 30%;
+        height: 100%;
+        width: 66.66666667%;
+        padding: 0;
+    }
+
+    .Type1Symptoms {
+        height: 100%;
+        width: 100%;
+        -webkit-box-shadow: 0 0 8px rgba(0, 178, 254, 0.4);
+        box-shadow: 0px 0px 8px rgba(0,178,254,0.4);
+
+        .Type1Symptoms-cell {
+            height: 100%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+            img.no-image {
+                visibility: hidden;
+            }
+
+            .slide-panel {
+                width: 93%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 10px;
+            }
+
+            div#slide-title {
+                color: #222222;
+                font-weight: 600;
+                font-size: 18px;
+                margin-top: 16px;
+                margin-bottom: 12px;
+            }
+
+            div#slide-read-more {
+                text-align: left;
+                width: 100%;
+                font-size: 16px;
+                line-height: 32px;
+                margin-bottom: 20px;
+
+
+                a, i {
+                    color: $primary-color;
+                }
+
+                i {
+                    font-size: 11px;
+                }
+            }
+
+            hr {
+                border: 0;
+                height: 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+}
+
+.bootstrap-iso {
+    #Type1Symptoms {
+        .Type1Symptoms-nav {
+            float: left;
+
+            .Type1Symptoms-nav-row {
+                float: left;
+            }
+        }
+
+        .Type1Symptoms-Content {
+            margin-left: 33.33333333%;
+        }
+
+        .Type1Symptoms {
+            .slide-panel {
+                left: 0;
+            }
+
+            div #slide-read-more {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.bootstrap-iso-ar {
+    #Type1Symptoms {
+        .Type1Symptoms-nav {
+            float: right;
+
+            .Type1Symptoms-nav-row {
+                float: right;
+            }
+        }
+
+        .Type1Symptoms-Content {
+            margin-right: 30%;
+        }
+
+        .Type1Symptoms {
+            .slide-panel {
+                right: 0;
+            }
+
+            div #slide-read-more {
+                text-align: right;
+            }
+        }
+    }
+}

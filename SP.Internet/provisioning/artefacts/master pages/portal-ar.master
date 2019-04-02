@@ -1,0 +1,425 @@
+<%@ Master Language="C#" %>
+
+<%@ Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Import Namespace="Microsoft.SharePoint" %>
+<%@ Assembly Name="Microsoft.Web.CommandUI, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Import Namespace="Microsoft.SharePoint.ApplicationPages" %>
+<%@ Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="wssuc" TagName="Welcome" Src="~/_controltemplates/15/Welcome.ascx" %>
+<%@ Register TagPrefix="PublishingRibbon" TagName="PublishingRibbon" Src="~/_controltemplates/15/Ribbon.ascx" %>
+<!DOCTYPE html>
+<SharePoint:SPHtmlTag dir="<%$Resources:wss,multipages_direction_dir_value%>" ID="SPHtmlTag" runat="server">
+
+    <head runat="server">
+        <meta http-equiv="X-UA-Compatible" content="IE=10" />
+        <meta http-equiv="X-UA-Compatible" content="IE=10" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="GENERATOR" content="Microsoft SharePoint" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Expires" content="0" />
+
+        <!-- PnP Starter Intranet fav icon -->
+        <asp:Literal runat="server" Text="&lt;link rel='shortcut icon' href='" />
+        <asp:Literal runat="server" Text="<%$SPUrl:~SiteCollection/Style Library/PnP/img/favicon_intranet.ico%>" />
+        <asp:Literal runat="server" Text="' type='image/vnd.microsoft.icon' /&gt;" />
+
+        <SharePoint:RobotsMetaTag runat="server" />
+        <SharePoint:PageTitle runat="server">
+            <asp:ContentPlaceHolder ID="PlaceHolderPageTitle" runat="server">
+                <SharePoint:ProjectProperty Property="Title" runat="server" />
+            </asp:ContentPlaceHolder>
+        </SharePoint:PageTitle>
+        <SharePoint:StartScript runat="server" />
+        <SharePoint:CssLink runat="server" Version="15">
+        </SharePoint:CssLink>
+        <SharePoint:CacheManifestLink runat="server" />
+        <SharePoint:PageRenderMode runat="server" RenderModeType="Standard" />
+        <SharePoint:ScriptLink language="javascript" name="core.js" OnDemand="true" runat="server" Localizable="false" />
+        <SharePoint:ScriptLink language="javascript" name="menu.js" OnDemand="true" runat="server" Localizable="false" />
+        <SharePoint:ScriptLink language="javascript" name="callout.js" OnDemand="true" runat="server" Localizable="false" />
+        <SharePoint:ScriptLink language="javascript" name="sharing.js" OnDemand="true" runat="server" Localizable="false" />
+        <SharePoint:ScriptLink language="javascript" name="suitelinks.js" OnDemand="true" runat="server" Localizable="false" />
+        <SharePoint:CustomJSUrl runat="server" />
+        <SharePoint:SoapDiscoveryLink runat="server">
+        </SharePoint:SoapDiscoveryLink>
+        <SharePoint:AjaxDelta id="DeltaPlaceHolderAdditionalPageHead" Container="false" runat="server">
+            <asp:ContentPlaceHolder ID="PlaceHolderAdditionalPageHead" runat="server">
+            </asp:ContentPlaceHolder>
+            <SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true">
+            </SharePoint:DelegateControl>
+            <asp:ContentPlaceHolder ID="PlaceHolderBodyAreaClass" runat="server">
+            </asp:ContentPlaceHolder>
+        </SharePoint:AjaxDelta>
+        <SharePoint:CssRegistration Name="Themable/corev15.css" runat="server" />
+        <SharePoint:AjaxDelta id="DeltaSPWebPartManager" runat="server">
+            <WebPartPages:SPWebPartManager runat="server" />
+        </SharePoint:AjaxDelta>
+
+        <!-- PnP Starter Intranet links -->
+        <link href='https://use.fontawesome.com/releases/v5.0.8/css/all.css' rel='stylesheet' type='text/css'>
+        <SharePoint:CssRegistration runat="server" ID="CssRegistration2" Name="&lt;% $SPUrl:~sitecollection/Style Library/PnP/fonts/fonts.css %&gt;" After="corev15.css" />
+        <SharePoint:CssRegistration runat="server" ID="CssRegistration1" Name="&lt;% $SPUrl:~sitecollection/Style Library/PnP/fonts/flaticon.css %&gt;" After="corev15.css" />
+        <SharePoint:CssRegistration runat="server" ID="PortalCss" Name="&lt;% $SPUrl:~sitecollection/Style Library/PnP/portal.css %&gt;" After="corev15.css" />
+        <SharePoint:CssRegistration runat="server" ID="BootstrapCss" Name="&lt;% $SPUrl:~sitecollection/Style Library/PnP/bootstrap-iso-ar.css %&gt;" After="corev15.css" />
+        <SharePoint:ScriptLink ID="VendorJs" Name="~SiteCollection/Style Library/PnP/js/vendor.js" runat="server" />
+        <SharePoint:ScriptLink ID="AppJs" Name="~SiteCollection/Style Library/PnP/js/app.js" runat="server" />
+        <SharePoint:CssRegistration Name="Themable/corev15.css" runat="server" />
+
+    </head>
+
+    <body onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();">
+        <SharePoint:SPClientIDGenerator runat="server" ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent" />
+        <SharePoint:ImageLink runat="server" />
+        <SharePoint:SharePointForm onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}" runat="server" __designer:Preview="&lt;table cellpadding=4 cellspacing=0 style=&quot;font:messagebox;color:buttontext;background-color:buttonface;border: solid 1px;border-top-color:buttonhighlight;border-left-color:buttonhighlight;border-bottom-color:buttonshadow;border-right-color:buttonshadow&quot;&gt;
+              &lt;tr&gt;&lt;td nowrap&gt;&lt;span style=&quot;font-weight:bold&quot;&gt;SharePointForm&lt;/span&gt; - Unnamed4&lt;/td&gt;&lt;/tr&gt;
+              &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+            &lt;/table&gt;"
+            __designer:Values="&lt;P N=&#39;Method&#39; T=&#39;post&#39; /&gt;&lt;P N=&#39;Name&#39; ID=&#39;1&#39; T=&#39;aspnetForm&#39; /&gt;&lt;P N=&#39;TagName&#39; T=&#39;form&#39; /&gt;&lt;P N=&#39;ID&#39; T=&#39;ctl03&#39; /&gt;&lt;P N=&#39;Page&#39; ID=&#39;2&#39; /&gt;&lt;P N=&#39;TemplateControl&#39; ID=&#39;3&#39; /&gt;&lt;P N=&#39;AppRelativeTemplateSourceDirectory&#39; R=&#39;-1&#39; /&gt;">
+            <asp:ScriptManager ID="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" />
+            <div id="ms-designer-ribbon">
+
+                <div id="TurnOnAccessibility" style="display: none" class="s4-notdlg noindex">
+                    <a id="linkTurnOnAcc" href="#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;">
+                        <SharePoint:EncodedLiteral runat="server" text="&lt;%$Resources:wss,master_turnonaccessibility%&gt;" EncodeMethod="HtmlEncode">
+                        </SharePoint:EncodedLiteral>
+                    </a>
+                </div>
+                <div id="TurnOffAccessibility" style="display: none" class="s4-notdlg noindex">
+                    <a id="linkTurnOffAcc" href="#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(false);UpdateAccessibilityUI();document.getElementById('linkTurnOnAcc').focus();return false;">
+                        <SharePoint:EncodedLiteral runat="server" text="&lt;%$Resources:wss,master_turnoffaccessibility%&gt;" EncodeMethod="HtmlEncode">
+                        </SharePoint:EncodedLiteral>
+                    </a>
+                </div>
+                <PublishingRibbon:PublishingRibbon runat="server" />
+
+            </div>
+            <SharePoint:SPSecurityTrimmedControl runat="server" AuthenticationRestrictions="AnonymousUsersOnly">
+                <wssuc:Welcome runat="server" EnableViewState="false" />
+            </SharePoint:SPSecurityTrimmedControl>
+
+            <!-- Start: s4-workspace -->
+            <div id="s4-workspace" class="bootstrap-iso-ar">
+                <div class="wrapper">
+                    <div id="s4-bodyContainer">
+
+                        <!-- Start Header -->
+                        <header class="clearfix">
+                            <div class="container">
+                                <div class="row">
+
+                                    <!-- Notification banner -->
+                                    <component-notification></component-notification>
+
+                                    <!-- Header -->
+
+                                </div>
+                            </div>
+                            <!-- Header Top Start -->
+                            <div class="h-top clearfix">
+                                <div class="col-sm-2 col-md-2 moph_logo_holder">
+                                    <div class="navbar-header">
+                                        <a class="navbar-brand" data-bind="attr: { href: _spPageContextInfo.webAbsoluteUrl }">
+                                            <img alt="" class="moph_logo hidden-xs" src="/sites/diabetesqatar/Style%20Library/PnP/img/moph_logo_ar.png">
+                                            <img alt="" class="visible-xs  mob_moph_logo" src="/sites/diabetesqatar/Style%20Library/PnP/img/moph_logo_ar.png">
+                                            <img alt="" class="visible-xs mob_diabetes_logo" src="/sites/diabetesqatar/Style%20Library/PnP/img/diabetes_logo.png">
+                                        </a>
+                                    </div>
+                                    <!-- Desktop Navigation List Start -->
+                                </div>
+                                <div class="col-sm-10 col-md-10 diabeteslogoholder">
+                                    <div class="navbar-collapse collapse hidden-xs" id="navbar-collapse-1">
+                                        <ul class="nav navbar-nav">
+                                            <li>
+                                                <component-languageswitcher params='languageFieldName:"IntranetContentLanguage", associationKeyFieldName:"IntranetContentAssociationKey"'></component-languageswitcher>
+                                            </li>
+                                            <li class="diabetes_logo_holder">
+                                                <a class="navbar-brand" data-bind="attr: { href: _spPageContextInfo.webAbsoluteUrl }">
+                                                    <img alt="" class="hidden-xs" src="/sites/diabetesqatar/Style%20Library/PnP/img/d_logo_ar.png" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!--/.nav navbar-nav-->
+                                    </div>
+                                    <!-- Desktop Navigation List End -->
+                                </div>
+                            </div>
+                            <!-- Header Bottom Start -->
+                            <div class="h-bottom clearfix btmnavcontainer">
+                                <div class="col-sm-2 col-md-2">
+                                </div>
+                                <div class="col-sm-10 col-md-10 btmnavcontainer_holder">
+                                    <div class="navcontainer">
+                                        <div class="navigation-menu">
+                                            <component-topnav></component-topnav>
+                                            <!--/.navbar yamm navbar-default-->
+                                        </div>
+                                        <!--/.navigation-menu-->
+                                    </div>
+                                    <!--/.container-->
+                                </div>
+                            </div>
+
+
+                            <h1 id="pageTitle" class="ms-core-pageTitle" style="display: none"></h1>
+
+                        </header>
+                        <!-- End: Header -->
+
+                        <!-- Breadcrumb Start -->
+                        <div id="intranet-breadcrumb" class="breadcrumb-title clearfix">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="breadcrumb-left">
+                                            <!-- Breadcrumb -->
+                                            <component-breadcrumb params='siteMapFieldName: "IntranetSiteMapPosition"'></component-breadcrumb>
+                                        </div>
+                                        <!--/.breadcrumb-left-->
+                                    </div>
+                                    <!--/.col-sm-6 col-md-6-->
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="breadcrumb-right">
+                                            <h5>
+                                                <SharePoint:AjaxDelta id="DeltaPlaceHolderPageTitleInTitleArea" runat="server">
+                                                    <asp:ContentPlaceHolder ID="PlaceHolderPageTitleInTitleArea" runat="server">
+                                                        <SharePoint:SPTitleBreadcrumb runat="server" RenderCurrentNodeAsLink="true" SiteMapProvider="SPContentMapProvider" CentralAdminSiteMapProvider="SPXmlAdminContentMapProvider">
+                                                            <pathseparatortemplate>
+                                                                                    <SharePoint:ClusteredDirectionalSeparatorArrow runat="server" />
+                                                                                </pathseparatortemplate>
+                                                        </SharePoint:SPTitleBreadcrumb>
+                                                    </asp:ContentPlaceHolder>
+                                                </SharePoint:AjaxDelta>
+                                                <SharePoint:AjaxDelta BlockElement="true" id="DeltaPlaceHolderPageDescription" CssClass="ms-displayInlineBlock ms-normalWrap" runat="server">
+                                                    <a href="javascript:;" id="ms-pageDescriptionDiv" style="display: none;">
+                                                        <span id="ms-pageDescriptionImage">&nbsp;</span>
+                                                    </a>
+                                                    <span class="ms-accessible" id="ms-pageDescription">
+                                                        <asp:ContentPlaceHolder ID="PlaceHolderPageDescription" runat="server" />
+                                                    </span>
+                                                    <SharePoint:ScriptBlock runat="server">
+                                                                            _spBodyOnLoadFunctionNames.push("setupPageDescriptionCallout");
+                                                                        </SharePoint:ScriptBlock>
+                                                </SharePoint:AjaxDelta></h5>
+                                        </div>
+                                    </div>
+                                    <!--/.col-sm-6 col-md-6-->
+                                </div>
+                                <!--/.row-->
+                            </div>
+                            <!--/.container-->
+                        </div>
+                        <!-- Breadcrumb End -->
+
+                        <!-- Start: Main Content -->
+                        <div id="intranet-content-area" class="container">
+                            <section class="content inner-pg service-pg clearfix">
+
+
+
+                                <div class="row">
+                                    <div class="hidden">
+                                        <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
+                                        </div>
+                                        <div class="col-md-4 col-lg-4 hidden-xs hidden-sm">
+                                            <div class="noindex">
+                                                <div class="promoted-actions">
+                                                    <!-- Share + Follow -->
+                                                    <!-- <SharePoint:SPSharePromotedActionButton runat="server" AllowMultipleControls="true"/>
+                                                    <SharePoint:DelegateControl runat="server" ControlId="PromotedActions" AllowMultipleControls="true" /> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div id="intranet-content" class="col-sm-12 col-md-8 col-lg-9">
+                                        <div id="notificationArea" class="ms-notif-box"></div>
+                                        <SharePoint:AjaxDelta id="DeltaPageStatusBar" BlockElement="true" runat="server">
+                                            <div id="pageStatusBar"></div>
+                                        </SharePoint:AjaxDelta>
+                                        <SharePoint:AjaxDelta id="DeltaPlaceHolderMain" BlockElement="true" IsMainContent="true" runat="server">
+                                            <a name="mainContent" tabindex="-1"></a>
+                                            <asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server"></asp:ContentPlaceHolder>
+                                        </SharePoint:AjaxDelta>
+
+                                    </div>
+
+                                    <div id="intranet-sidebar" class="col-sm-12 col-md-4 col-lg-3">
+                                        <!-- Sidebar Widget Start -->
+                                        <div class="sidebar-widget clearfix">
+                                            <!-- Widget Block Start -->
+                                            <div class="widget-block">
+                                                <!-- Medlife Service Start -->
+                                                <div class="ms-noList">
+                                                    <component-contextualmenu params='siteMapFieldName: "IntranetSiteMapPosition"'></component-contextualmenu>
+                                                </div>
+                                                <div class="ms-noList">
+                                                    <component-headerlinks></component-headerlinks>
+                                                </div>
+                                                <asp:ContentPlaceHolder ID="SidebarZone" runat="server"></asp:ContentPlaceHolder>
+                                            </div>
+                                            <!-- Widget Block End -->
+                                        </div>
+                                        <!-- Sidebar Widget End -->
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- End: Main Content -->
+
+                    <div class="push ms-dialogHidden"></div>
+                </div>
+                <!-- End: Wrapper -->
+
+                <!-- Start: Footer -->
+                <footer class="footer clearfix">
+                    <div class="container">
+                        <div class="f-top clearfix">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3 widget-block" id="FooterPane1" runat="server">
+                                </div>
+                                <div class="col-sm-6 col-md-3 widget-block" id="FooterPane2" runat="server">
+                                </div>
+                                <div class="col-sm-6 col-md-3 widget-block" id="FooterPane3" runat="server">
+                                </div>
+                                <div class="col-sm-6 col-md-3 widget-block" id="FooterPane4" runat="server">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Bottom Start -->
+                    <div class="f-bottom clearfix">
+                        <p><span data-bind="getResource: 'footerCopyrightText'"></span></p>
+                    </div>
+                    <!-- Footer Bottom End -->
+
+
+
+
+                    <div class="hidden container">
+                        <div class="row">
+                            <div id="intranet-footer">
+                                <div class="row">
+                                    <div id="intranet-footerbar">
+                                        <div class="col-md-8 col-sm-8 col-xs-7 col-lg-8">
+                                            <!-- Footer Links -->
+                                            <div class="hidden-xs">
+                                                <component-footerlinks></component-footerlinks>
+                                            </div>
+
+                                            <!-- Footer language switcher -->
+                                            <div class="hidden-sm hidden-md hidden-lg">
+                                                <component-languageswitcher params='languageFieldName:"IntranetContentLanguage", associationKeyFieldName:"IntranetContentAssociationKey"'></component-languageswitcher>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-5 col-lg-4">
+                                            <!-- Social Links -->
+                                            <div id="intranet-sociallinks">
+
+                                                <a href="https://twitter.com/FranckCornu">
+                                                    <span class="fa-stack fa-lg">
+                                                        <i class="fa fa-circle fa-stack-2x" style="color: #1da1f2"></i>
+                                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/watch?v=2LQfJe8nOws">
+                                                    <span class="fa-stack fa-lg">
+                                                        <i class="fa fa-circle fa-stack-2x" style="color: #bb0000"></i>
+                                                        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+
+                                                <a href="https://www.linkedin.com/company/aequos-solutions/">
+                                                    <span class="fa-stack fa-lg">
+                                                        <i class="fa fa-circle fa-stack-2x" style="color: #0077b5"></i>
+                                                        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <asp:ContentPlaceHolder ID="F1_Zone25_1" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <asp:ContentPlaceHolder ID="F1_Zone25_2" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <asp:ContentPlaceHolder ID="F1_Zone25_3" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <asp:ContentPlaceHolder ID="F1_Zone25_4" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <asp:ContentPlaceHolder ID="F2_Zone33_1" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:ContentPlaceHolder ID="F2_Zone33_2" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:ContentPlaceHolder ID="F2_Zone33_3" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <asp:ContentPlaceHolder ID="F3_Zone50_1" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:ContentPlaceHolder ID="F3_Zone50_2" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <asp:ContentPlaceHolder ID="F4_Zone100" runat="server"></asp:ContentPlaceHolder>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End: Footer -->
+
+                <div class="ms-hide">
+                    <asp:ContentPlaceHolder ID="PageTitleZone" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="TitleZone" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="ActionTitleZone" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderHorizontalNav" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderPageImage" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderTitleLeftBorder" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderMiniConsole" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderTitleRightMargin" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderTitleAreaSeparator" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderNavSpacer" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBarBorder" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderBodyRightMargin" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderTitleAreaClass" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderGlobalNavigation" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderGlobalNavigationSiteMap" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="WSSDesignConsole" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderTitleBreadcrumb" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="PlaceHolderSiteName" runat="server" Visible="false"></asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+            <!-- End: s4-workspace -->
+
+        </SharePoint:SharePointForm>
+        <SharePoint:AjaxDelta id="DeltaPlaceHolderUtilityContent" runat="server">
+            <asp:ContentPlaceHolder ID="PlaceHolderUtilityContent" runat="server" />
+        </SharePoint:AjaxDelta>
+        <SharePoint:ScriptBlock runat="server">
+                                                var g_Workspace = "s4-workspace";
+                                            </SharePoint:ScriptBlock>
+
+    </body>
+</SharePoint:SPHtmlTag>

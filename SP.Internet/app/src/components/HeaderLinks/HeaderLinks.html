@@ -1,0 +1,22 @@
+<div id="header-links">
+    <div class="opening-hours light-green-bg">
+        <!-- Widget Title Start -->
+        <div class="widget-title clearfix">
+            <h6>
+                <span class="head" data-bind="html: Intranet.Main.getResource('UsefulLinks')"></span>
+            </h6>
+        </div>
+        <!-- Widget Title End -->
+        <div id="header-links" data-bind="css: {'spinner': wait }">
+            <ul>
+                <!-- ko foreach: nodes -->
+                <li>
+                    <i class="fa hidden-sm hidden-md hidden-lg" aria-hidden="true" data-bind="visible: $data.properties()['iconClass'], css: $data.properties()['iconClass']"></i>
+                    <a data-bind="attr: { href: url }, text: title">
+                    </a>
+                </li>
+                <!-- /ko -->
+            </ul>
+        </div>
+    </div>
+</div>

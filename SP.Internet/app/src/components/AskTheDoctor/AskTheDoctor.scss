@@ -1,0 +1,92 @@
+@import '../../styles/css/variables';
+
+#AskTheDoctor {
+    font-family: $font-primary;
+    height: 300px;
+
+    .sec-title {
+        h2 {
+            position: relative;
+            color: #222222;
+            font-size: 30px;
+            line-height: 1.2em;
+            font-weight: 800;
+
+
+            span {
+                color: #00b2fe !important;
+            }
+        }
+    }
+
+    .AskTheDoctor-Content {
+        height: 100%;
+        width: 100%;
+        padding: 5px 25px 22px;
+    }
+
+    .AskTheDoctor {
+        height: 100%;
+        width: 100%;
+
+        .AskTheDoctor-cell {
+            height: 100%;
+            width: 100%;
+            position: relative;
+
+            .image-box {
+                margin-left: 20%
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+            img.no-image {
+                visibility: hidden;
+            }
+
+            .slide-panel {
+                width: 93%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 10px;
+            }
+
+            .inner-column {
+                position: relative;
+                padding-top: 30px;
+            }
+
+            .name a {
+                position: relative;
+                display: block;
+                font-size: 24px;
+                line-height: 1.2em;
+                color: #222222;
+                font-weight: 700;
+                margin-bottom: 7px;
+            }
+
+            .designation {
+                font-size: 17px;
+                color: #000000;
+                font-style: italic;
+            }
+
+
+            p a {
+                position: relative;
+                display: block;
+                font-size: 14px;
+                line-height: 30px;
+                color: #888888;
+                font-weight: 400;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

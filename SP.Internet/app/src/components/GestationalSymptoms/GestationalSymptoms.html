@@ -1,0 +1,28 @@
+<div id="GestationalSymptoms">
+    <div class="sec-title text-center">
+
+        <h2 data-bind="html: Intranet.Main.getResource('GestationalSymptomsHeader')"></h2>
+        <div class="separator"><span class="fa fa-bullseye"></span></div>
+    </div>
+    <!-- Flickity HTML init -->
+
+    <div class="GestationalSymptoms-Content">
+
+        <div class="GestationalSymptoms">
+            <!-- ko foreach: items -->
+
+            <div class="GestationalSymptoms-cell">
+
+                <div id="slide-read-more" class="col-md-12 content-box">
+                    <span data-bind="html: Document_x0020_Description">
+                    </span>
+                    <a data-bind="attr: {href: CarouselItemURL ? CarouselItemURL.Url : '#' }, text: CarouselItemURL ? $parent.readMoreLabel: ''"> </a>
+                    <i data-bind="css: {'hidden': !CarouselItemURL }" class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+
+</div>

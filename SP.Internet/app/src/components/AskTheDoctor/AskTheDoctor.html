@@ -1,0 +1,40 @@
+<div id="AskTheDoctor">
+    <div class="sec-title text-center">
+
+        <h2 data-bind="html: Intranet.Main.getResource('AskTheDoctorHeader')"></h2>
+        <div class="separator"><span class="fa fa-bullseye"></span></div>
+    </div>
+    <!-- Flickity HTML init -->
+
+
+    <div class="AskTheDoctor-Content doctors-tabs tabs-box">
+        <div class="AskTheDoctor tabs-content">
+            <!-- ko foreach: items -->
+            <div class="AskTheDoctor-cell tab">
+                <div class="row clearfix">
+
+                    <div class="image-column col-md-5 col-sm-12 col-xs-12">
+                        <div class="image-box">
+                            <a data-bind="attr: {href: CarouselItemURL ? CarouselItemURL.Url : '#' }" class="lightbox-image" target="_blank" data-fancybox="AskTheDoctor">
+                                <img data-bind="attr : {'data-flickity-lazyload': CarouselItemImage ? (CarouselItemImage.Url + '?height=600') : $component.siteLogoUrl }, css : {'no-image' : !CarouselItemImage }" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="content-column col-md-6 col-sm-12 col-xs-12">
+                        <div class="inner-column">
+
+                            <h3 class="name"><a href="#"><span data-bind="text: Title"></span></a></h3>
+                            <span class="designation" data-bind="text: Document_x0020_Description"></span>
+
+                            <p><a data-bind="attr: {href: CarouselItemURL ? CarouselItemURL.Url : '#' }, text: CarouselItemURL ? (CarouselItemURL.Description) : ''"> </a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+
+
+</div>

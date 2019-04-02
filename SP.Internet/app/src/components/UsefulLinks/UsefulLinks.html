@@ -1,0 +1,23 @@
+<div id="usefullinks">
+    <div class="sec-title text-center">
+
+        <h2 data-bind="html: Intranet.Main.getResource('UsefulLinks')"></h2>
+        <div class="separator"><span class="fa fa-bullseye"></span></div>
+    </div>
+
+    <div class="useful-links row clearfix">
+        <!-- ko foreach: items -->
+
+        <div class="service-block col-md-4 col-sm-6 col-xs-12">
+
+            <div class="inner-box">
+                <a data-bind="attr: {href: CarouselItemURL ? CarouselItemURL.Url : '#' }">
+                    <div class="icon-box"><img class="usefulLinkImage" data-bind="attr : {'src': CarouselItemImage ? CarouselItemImage.Url : $component.siteLogoUrl }, css : {'no-image' : !CarouselItemImage }" /></div>
+                    <h3><span data-bind="text: Title"></span></h3>
+                </a>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+
+</div>

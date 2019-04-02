@@ -1,0 +1,20 @@
+@import '../../styles/css/variables';
+
+#usefullinks {
+    font-family: $font-primary;
+    font-size: 14px;
+
+    .sec-title {
+        h2 {
+            position: relative;
+            color: #222222;
+            font-size: 30px;
+            line-height: 1.2em;
+            font-weight: 800;
+
+            span {
+                color: #00b2fe !important;
+            }
+        }
+    }
+}

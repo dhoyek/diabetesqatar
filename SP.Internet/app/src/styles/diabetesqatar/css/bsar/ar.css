@@ -1,0 +1,50 @@
+﻿body {
+    overflow-x: hidden !important;
+}
+
+    body > * {
+        max-width: 100% !important;
+    }
+.h-top .moph_logo_holder .navbar-brand {
+    left: 28px;
+    right: auto;
+    position: absolute;
+}
+.breadcrumb-title .breadcrumb-right {
+    text-align: left !important;
+}
+.h-top .diabeteslogoholder .navbar-nav{
+    left:290px; right:auto;
+}
+.navbar-nav > li {
+    float: right
+}
+.doctor-info .image-column .inner-column {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    padding-right: 100px;
+}
+.yamm .dropdown-menu {
+   
+    right: auto !important;
+
+}
+.h-bottom .navbar .navbar-nav > li > ul.dropdown-menu:before {
+    position: absolute;
+    content: "";
+    bottom: 100%;
+    right: 15px;
+    left : auto !important;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 5px 6px;
+    border-color: transparent transparent #ffffff transparent;
+}
+@media (max-width: 767px) {
+    .language-object {
+    position: absolute; left: 0px;
+    right:40px;
+}
+}
