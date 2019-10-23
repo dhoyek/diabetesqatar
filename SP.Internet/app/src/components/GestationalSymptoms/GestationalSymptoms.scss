@@ -1,10 +1,8 @@
 @import '../../styles/css/variables';
-
 #GestationalSymptoms {
     font-family: $font-primary;
     font-size: 14px;
     height: 300px;
-
     .sec-title {
         h2 {
             position: relative;
@@ -12,67 +10,76 @@
             font-size: 30px;
             line-height: 1.2em;
             font-weight: 800;
-
-
             span {
                 color: #00b2fe !important;
             }
         }
     }
-
-    div.GestationalSymptoms-nav > div.GestationalSymptoms-nav-row ~ div.GestationalSymptoms-nav-row {
-
-        .GestationalSymptoms-nav-cell {
-            /*border-top: 1px solid #F2EFEF;*/
-        }
-    }
-
     .GestationalSymptoms-Content {
         margin: 0 auto;
         height: 100%;
         width: 85%;
-        
     }
-
     .GestationalSymptoms {
         height: 100%;
         width: 100%;
-
         .GestationalSymptoms-cell {
             height: 100%;
             width: 100%;
-
             img {
                 height: 100%;
                 width: 100%;
             }
-
             img.no-image {
                 visibility: hidden;
             }
-
             div#slide-read-more {
-                text-align: left;
                 width: 75%;
                 font-size: 130%;
                 line-height: 32px;
                 margin-bottom: 20px;
-
-
-                a, i {
+                a,
+                i {
                     color: $primary-color;
                 }
-
                 i {
                     font-size: 11px;
                 }
             }
-
             hr {
                 border: 0;
                 height: 0;
                 border-top: 1px solid rgba(0, 0, 0, 0.1);
                 border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+}
+
+.bootstrap-iso {
+    #GestationalSymptoms {
+        .GestationalSymptoms {
+            .GestationalSymptoms-cell {
+                div#slide-read-more {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+.bootstrap-iso-ar {
+    #GestationalSymptoms {
+        .GestationalSymptoms {
+            .GestationalSymptoms-cell {
+                div#slide-read-more {
+                    text-align: right;
+                    margin-right: 48px;
+                    p {
+                        font-size: 100%;
+                        line-height: 36px
+                    }
+                }
             }
         }
     }

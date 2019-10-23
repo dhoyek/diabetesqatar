@@ -1,10 +1,9 @@
 @import '../../styles/css/variables';
-
 #Type2Symptoms {
     font-family: $font-primary;
     font-size: 13px;
     height: 300px;
-
+    line-height: 14px;
     .sec-title {
         h2 {
             position: relative;
@@ -12,28 +11,23 @@
             font-size: 30px;
             line-height: 1.2em;
             font-weight: 800;
-
-
             span {
                 color: #00b2fe !important;
             }
         }
     }
-
     .Type2Symptoms-nav {
         float: left;
         width: 34.33333333%;
         height: 100%;
         display: table;
         table-layout: fixed;
-
         .Type2Symptoms-nav-row {
             width: 45%;
             /*padding: 5px;*/
             cursor: pointer;
             display: block;
             float: left;
-
             .Type2Symptoms-nav-cell {
                 margin-bottom: 1.5rem !important;
                 margin-right: 1.5rem !important;
@@ -41,81 +35,64 @@
                 position: relative; // Needed for arrow
                 vertical-align: middle;
                 text-align: center;
-                -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.1);
-                box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+                -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
                 color: #222222;
                 height: 110px;
                 font-weight: 600;
-
                 img {
                     max-width: 42px;
                     padding-top: 16px;
                 }
-
                 a {
                     color: #222222;
                     font-weight: 600;
                     text-transform: uppercase;
                     font-size: 15px;
                 }
-
-                a:hover, a:focus {
+                a:hover,
+                a:focus {
                     text-decoration: none;
                     color: #00aff5
                 }
             }
         }
-
         .Type2Symptoms-nav-row.is-nav-selected {
             .Type2Symptoms-nav-cell {
                 /*background-color: #00aff5;*/
                 -webkit-box-shadow: 0 0 8px rgba(0, 178, 254, 0.4);
                 box-shadow: 0px 0px 8px rgba(0, 178, 254, 0.4);
-
                 a {
                     color: #00aff5;
                 }
-
-                a:hover, a:focus {
+                a:hover,
+                a:focus {
                     color: #00aff5;
                 }
             }
         }
     }
-
-    div.Type2Symptoms-nav > div.Type2Symptoms-nav-row ~ div.Type2Symptoms-nav-row {
-
-        .Type2Symptoms-nav-cell {
-            /*border-top: 1px solid #F2EFEF;*/
-        }
-    }
-
     .Type2Symptoms-Content {
         margin-left: 30%;
         height: 100%;
         width: 66.66666667%;
         padding: 0;
     }
-
     .Type2Symptoms {
-        height: 100%;
+        height: 65%;
         width: 100%;
         -webkit-box-shadow: 0 0 8px rgba(0, 178, 254, 0.4);
-        box-shadow: 0px 0px 8px rgba(0,178,254,0.4);
-
+        box-shadow: 0px 0px 8px rgba(0, 178, 254, 0.4);
         .Type2Symptoms-cell {
             height: 100%;
             width: 100%;
-
             img {
                 height: 100%;
                 width: 100%;
             }
-
             img.no-image {
                 visibility: hidden;
             }
-
             .slide-panel {
                 width: 93%;
                 height: 100%;
@@ -124,32 +101,27 @@
                 left: 0;
                 padding: 10px;
             }
-
-            div#slide-title {
+            div.slide-title {
                 color: #222222;
                 font-weight: 600;
                 font-size: 18px;
                 margin-top: 16px;
                 margin-bottom: 12px;
             }
-
-            div#slide-read-more {
+            div.slide-read-more {
                 text-align: left;
                 width: 100%;
                 font-size: 16px;
                 line-height: 32px;
                 margin-bottom: 20px;
-
-
-                a, i {
+                a,
+                i {
                     color: $primary-color;
                 }
-
                 i {
                     font-size: 11px;
                 }
             }
-
             hr {
                 border: 0;
                 height: 0;
@@ -164,21 +136,17 @@
     #Type2Symptoms {
         .Type2Symptoms-nav {
             float: left;
-
             .Type2Symptoms-nav-row {
                 float: left;
             }
         }
-
         .Type2Symptoms-Content {
             margin-left: 33.33333333%;
         }
-
         .Type2Symptoms {
             .slide-panel {
                 left: 0;
             }
-
             div #slide-read-more {
                 text-align: left;
             }
@@ -190,22 +158,18 @@
     #Type2Symptoms {
         .Type2Symptoms-nav {
             float: right;
-
             .Type2Symptoms-nav-row {
                 float: right;
             }
         }
-
         .Type2Symptoms-Content {
-            margin-right: 30%;
+            margin-right: 33.33333333%;
         }
-
         .Type2Symptoms {
             .slide-panel {
                 right: 0;
             }
-
-            div #slide-read-more {
+            div .slide-read-more {
                 text-align: right;
             }
         }

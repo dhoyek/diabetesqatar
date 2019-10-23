@@ -15,7 +15,7 @@
                 <span class="nav-img">
                     <img data-bind="attr : {'src': CarouselItemImage ? CarouselItemImage.Url : $component.siteLogoUrl }" alt="" />
 
-                </span><br />
+                </span><br /><br />
                 <span class="nav-label">
                     <a data-bind="text: Title, attr: {href: '#' }" href="#"></a>
                 </span>
@@ -35,12 +35,12 @@
 
 
                 <div class="slide-panel">
-                    <div id="slide-title" class="col-md-12 box-heading">
+                    <div class="col-md-12 box-heading slide-title">
                         <span data-bind="text: Title">
                         </span>
                     </div>
 
-                    <div id="slide-read-more" class="col-md-12 content-box">
+                    <div class="col-md-12 content-box slide-read-more">
                         <span data-bind="text: Document_x0020_Description">
                         </span>
                         <a data-bind="attr: {href: CarouselItemURL ? CarouselItemURL.Url : '#' }, text: CarouselItemURL ? $parent.readMoreLabel: ''"> </a>

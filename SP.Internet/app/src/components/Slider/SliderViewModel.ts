@@ -65,6 +65,7 @@ class SliderViewModel {
                         pageDots: false,
                         prevNextButtons: true,
                         setGallerySize: false,
+                        wrapAround: true
                     });
 
                     slider.select(0);

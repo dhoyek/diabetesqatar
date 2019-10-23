@@ -27,13 +27,17 @@
                             <h3 class="name"><a href="#"><span data-bind="text: Title"></span></a></h3>
                             <span class="designation" data-bind="text: Document_x0020_Description"></span>
 
-                            <p><a data-bind="attr: {href: CarouselItemURL ? CarouselItemURL.Url : '#' }, text: CarouselItemURL ? (CarouselItemURL.Description) : ''"> </a></p>
+                            <p>
+                                <a data-bind="attr: {href: CarouselItemURL ? CarouselItemURL.Url : '#' }, text: CarouselItemURL ? (CarouselItemURL.Description) : ''"> </a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- /ko -->
         </div>
+        <button class="prev-next-button previous" aria-label="previous" type="button"><i class="fas fa-angle-double-left"></i></button>
+        <button class="prev-next-button next" aria-label="next" type="button"><i class="fas fa-angle-double-right"></i></button>
     </div>
 
 

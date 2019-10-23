@@ -79,7 +79,10 @@ require("./styles/diabetesqatar/css/style.css");
 require("./styles/diabetesqatar/css/yamm.css"); //<!-- Animation -->
 require("./styles/diabetesqatar/css/animate.css"); //<!-- Animation -->
 require("./styles/diabetesqatar/css/flaticon.css"); //<!-- Animation -->
+require("./styles/diabetesqatar/css/font-awesome.min.css"); //<!-- Animation -->
 //require("./styles/diabetesqatar/css/fonts.css"); //<!-- Animation -->
+
+require("./styles/diabetesqatar/css/jquery.fancybox.min.css"); //<!-- fancy Box -->
 
 //Diabetes Images
 require("./styles/diabetesqatar/images/d_logo_en.png");

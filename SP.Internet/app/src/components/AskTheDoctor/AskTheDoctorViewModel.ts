@@ -10,6 +10,9 @@ import "trunk8";
 const Flickity = require("flickity");
 require("flickity-imagesloaded");
 
+require("@fancyapps/fancybox");
+
+
 class AskTheDoctorViewModel {
 
     public items: KnockoutObservableArray<any> = ko.observableArray([]);
@@ -63,11 +66,27 @@ class AskTheDoctorViewModel {
                         imageLoaded: true,
                         lazyLoad: 1,
                         pageDots: false,
-                        prevNextButtons: true,
+                        prevNextButtons: false,
                         setGallerySize: true,
+                        wrapAround: true
                     });
 
                     AskTheDoctor.select(0);
+
+                    // next
+                    $('.bootstrap-iso .AskTheDoctor-Content .next').on( 'click', function() {
+                        AskTheDoctor.next();
+                    });
+                    $('.bootstrap-iso-ar .AskTheDoctor-Content .previous').on( 'click', function() {
+                        AskTheDoctor.next();
+                    });
+                    // previous
+                    $('.bootstrap-iso .AskTheDoctor-Content .previous').on( 'click', function() {
+                        AskTheDoctor.previous();
+                    });
+                    $('.bootstrap-iso-ar .AskTheDoctor-Content .next').on( 'click', function() {
+                        AskTheDoctor.previous();
+                    });
 
                     // Truncate the label
                     $("#slide-title").trunk8(trunk8OptionsSlideTitle);
